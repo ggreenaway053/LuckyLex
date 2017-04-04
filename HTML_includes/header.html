@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  
+  <title><?php echo $page_title; ?></title>
+    
+    <!-- Meta descriptions -->
+    <meta name="author" content="Gareth Greenaway"/>
+    <meta name="description" content="Lucky Lex, a fun, addictive game for all! Available free, on iOS and Android, download today!"/>
+    <meta name="keywords" content="lucky, lex, fun, iphone, android, game, video game, uuj, uu, ulster, university, imd, interactive multimedia design, gareth, greenaway, gareth greenaway, lucky lex"/>
+  
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#top">Lucky Lex</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id="indexBtn" class="active"><a href="dashboard.php" href="#home"><span class="fa fa-dashboard"></span> Home</a></li>
+                    <li id="aboutBtn"><a href="#about"><span class="fa fa-align-center"></span> About</a></li>
+                    <li id="scoreBtn"><a href="#score"><span class="fa fa-trophy"></span> High-Scores</a></li>
+                    <li id="dwnloadBtn"><a href="#download"><span class="fa fa-download"></span> Download</a></li>
+                    <li id="playBtn"><a href="#play" id="playBtn"><span class="fa fa-play"></span> Play</a></li>
+                </ul>
+              
+              
+              <ul class="nav navbar-nav navbar-left">
+                <li>
+                <a a data-toggle="modal" data-target="#profile-modal" type="reset" href="#profile"><span class="fa fa-user-circle-o"></span> Your Profile</a></li>
+              </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+  
+  
+  
+  <!-- User Modal -->
+  <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="adminLogin">
+      <div class="modal-dialog modal-lg">
+        
+        
+        <div class="modal-content">
+          <div class="modal-header">
+            
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+            
+            <h2 class="modal-title text-center">User Profile</h2>
+          </div>
+          
+          <div class="modal-body">
+            
+                
+                
+              <!-- Start of Modal Content -->
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <form id="adminProfile" name="adminProfile" class="form-horizontal" action="logout.php" method="post">
+                      
+                      <fieldset>
+                        
+                        <!-- Email input-->
+                        <div class="center-block" style="padding-left: 15%;">
+                          
+                          <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    
+                          <div class="text-center">
+                          <a href="logout.php" class="btn btn-lg btn-warning"><span class="fa fa-sign-out"></span> Logout</a>
+                          
+                          <a href="change_pass.php" class="btn btn-lg btn-info"><span class="fa fa-id-card-o"></span> Change Password</a>
+                            
+                            </div>
+                        
+                      </fieldset>
+                      </form>
+                   
+                </div>
+              </div>
+            </div>
+            <!-- END of Modal Content -->
+          </div>
+              </div>
+            </div>
+        
+          
+          </div>
+        
+    </div>
+
+  
+  
+  <div class="container" id="containerMain">
+    <br /><br /><br />
