@@ -38,20 +38,20 @@ $password=$_POST['password'];
               
               
 
-            // redirect to file "login_success.php"
+            // redirect to file "dashboard.php"
               session_start();
-            $_SESSION['userId'] = $data['userId'];
               
-            $_SESSION['firstName'] = $data['firstName'];
               
-            header("location: login_success.php");
+              setcookie ('userID', $data[1]);
+              
+            header("location: dashboard.php");
               
             
             
                           } else {
                                   
                                   
-                                  include ('index.php');
+                                  include_once ('index.php');
                                   echo "<nav class='nav navbar-fixed-top'>
                                   <div class='alert-danger'>
                                   <h4 class='text-center' style='margin-top: 0px; padding-top:10px; padding-bottom: 5px;'>

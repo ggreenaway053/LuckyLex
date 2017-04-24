@@ -17,8 +17,8 @@ if ($result){ //if there are results found, then this will run
   
   echo '<table class="table table-hover table-bordered table-responsive table-striped">
   <thead>
-  <tr>
-  <th style="text-align: center;">User Ranking:</th>
+  <tr style="font-family: Dosis, Sans-Serif;">
+  <th style="text-align: center;"> # Ranking:</th>
   <th style="text-align: center;">User Name:</th>
   <th style="text-align: center;">Score:</th>
   </thead>
@@ -27,7 +27,7 @@ if ($result){ //if there are results found, then this will run
   while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     
     echo '<tbody class="text-center"><tr>
-          <td>'. $i++ .'</td><td>' . $row['firstName'] . '</td><td>' . $row['score'] . '</td></tr></tbody>';
+          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .'</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
     
     
   }

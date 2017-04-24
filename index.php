@@ -1,5 +1,5 @@
 <?php
-include_once('php_includes/functions.php');
+//include_once('php_includes/functions.php');
 
 ?>
 
@@ -50,7 +50,7 @@ include_once('php_includes/functions.php');
               
               <br />
               
-                <button class="btn btn-lg btn-info btn-block" type="submit">Sign In</button>
+                <button class="btn btn-lg btn-info btn-block" type="submit" id="signIn">Sign In</button>
             </form>
           
           

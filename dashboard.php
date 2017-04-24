@@ -1,12 +1,10 @@
 <?php
   
 //updates page title in header.html, useful for more than one page site.
-  $page_title = 'Welcome to Lucky Lex!'; 
-
+  $page_title = 'Welcome to Lucky Lex!';
 
 //includes nav bar.
 include ('HTML_includes/header.html');
-
 
 //starts session
 ob_start();
@@ -21,7 +19,15 @@ ob_start();
         
         <h1 class="text-center intro1 heading">Lucky Lex</h1>
           <hr class="small"/>
-          <div class="text-center" id="userLogin">A small, fun project created by Gareth Greenaway.</div>
+          <div class="text-center" id="userLogin">A small, fun project created by Gareth Greenaway.
+            
+            <br />
+          <a href="https://twitter.com/ggreenawayGames" class="twitter-follow-button" data-show-count="false">Follow @ggreenawayGames</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            
+            
+        
+          </div>
+            
         </section>
       
       <br />
@@ -31,8 +37,11 @@ ob_start();
       
       <h1 class="text-right aboutTitle">About Lucky Lex</h1>
       
-      <p class="text-left lead aboutLead"><strong>Lucky Lex</strong> is a great time killer. It was created by final year Interacitve Multimedia Design student, Gareth Greenaway for his major project. The game focuses around the player character, Lucky Lex, who is on a hunt to find as much treasure as he can!
+      <p class="text-left lead aboutLead"><strong>Lucky Lex</strong> is a great time killer. It was created by final year Interactive Multimedia Design student, Gareth Greenaway for his major project. The game focuses around the player character, Lucky Lex, who is on a hunt to find as much treasure as he can!
       <br />Join them on their adventure to find and take as much loot as your pockets will hold, but be wary of enemies and the dangers of the world you find yourself in.</p>
+          
+          
+          
       
       <br />
       
@@ -98,6 +107,8 @@ ob_start();
               <br /> Please let me know what you think, by emailing me at: <a href="mailto:ggreenaway053@hotmail.com?Subject=Lucky Lex!" target="_top">ggreenaway053@hotmail.com</a></p>
             
             <a href="proto.zip" download="proto.zip" class="btn btn-info btn-lg hvr-grow">Download Free!</a>
+          
+          
       
           <br /><br />
   
@@ -117,6 +128,44 @@ ob_start();
             <p>PLAY GAME HERE</p><br />
   
   </section>
+
+<br />
+<a id="tweets"></a><section class="tweets">
+  
+      <a class="twitter-timeline" data-height="250" data-theme="dark" data-link-color="#E81C4F" href="https://twitter.com/ggreenawayGames">Tweets by ggreenawayGames</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+  </section>
+
+
+<br />
+<a id="comments"></a><section class="comments">
+  
+  <h1 class="playTitle text-right">Comments</h1>
+  
+  <p class="lead">Feel free to fill out this form and tell me what you think!</p>
+  
+  
+  <form method="POST" name="emailForm" action="emailForm.php">
+  
+  <label for="name">Name:</label>
+  <input type="text" name="name" id="name" class="form-control" placeholder="Lucky Lex" required/>
+  
+  <label for="emailAddress">Email Address:</label>
+  <input type="email" name="emailAddress" id="emailAddress" class="form-control" placeholder="luckylex@thebest.com" required />
+    
+  <label for="comment">Comments:</label>
+  <input type="textarea" name="comment" id="comment" class="form-control" placeholder="I LOVE THIS GAME!" required/>
+    
+    <br />
+    
+    <div class="text-center">
+    <button type="submit" class="btn btn-lg btn-success" id="submitComment">Submit my comment!</button>
+    </div>
+  
+  
+  </form>
+  
+  </section>
       
       
      
@@ -133,7 +182,7 @@ ob_start();
 
 <!-- END OF HTML CONTENT -->
 
-<?php 
+<?php
      
      include ('HTML_includes/footer.html');
 ob_end_flush();

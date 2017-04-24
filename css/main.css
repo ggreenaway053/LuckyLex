@@ -152,7 +152,14 @@ legend{
   font-size:25px;
 }
 
-
+.comments{
+font-family: 'Dosis', sans-serif;
+background-color: #A2A2A2;
+padding-left: 40px;
+padding-right: 40px;
+padding-bottom: 20px;
+  
+}
 
 /* ABOUT */
 .about{
