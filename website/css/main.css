@@ -1,3 +1,28 @@
+div.content {
+	margin: auto;
+	width: 480px;
+}
+div.missing {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	width: 193px;
+}
+div.missing a {
+	height: 63px;
+	position: relative;
+	top: -31px;
+}
+div.missing img {
+	border-width: 0px;
+}
+div#unityPlayer {
+	cursor: default;
+	height: 320px;
+	width: 480px;
+}
+
+
 .register {
   
   font-family: 'Dosis', sans-serif;
@@ -7,6 +32,19 @@ padding: 10px;
   
 }
 
+
+.infoScores{
+ background-image: url('../img/infoBg.png');
+background-size: cover;
+color: black;
+  
+}
+
+
+.highestScoring {
+position:relative;
+  
+}
 
 .profile-img-card {
     width: 100px;
@@ -261,12 +299,16 @@ position: relative;
 width: 100%;
 height: 100%;
 margin: 0;
-background-color:#fff;
-  align-content:center;
-  font-family: 'Dosis', sans-serif;
-opacity: 0.9;
+align-content:center;
+font-family: 'Dosis', sans-serif;
 }
 
+  
+  #gifArea{
+  
+background-image:url(../img/luckyLex.gif);
+background-size: cover;
+}
   
 }
 
@@ -278,7 +320,7 @@ opacity: 0.9;
 }
   
   
-      .heading {
+      #gifArea {
 display: table;
 position: relative;
 width: 100%;
@@ -287,7 +329,6 @@ margin: 0;
 background:url(../img/background.jpg) repeat center scroll;
   align-content:center;
   font-family: 'Dosis', sans-serif;
-opacity: 1;
 }
 
   

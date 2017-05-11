@@ -2,7 +2,7 @@
 
 $page_title = "Register | Lucky Lex";
 
-include('php_includes/functions.php');
+include_once('php_includes/functions.php');
 
 // checks for form submission
 
@@ -96,9 +96,9 @@ include('php_includes/functions.php');
         // if everything is okay, then this if statement will run
         if(empty($errors)) {
         
-        require ('database_conn/db_connect.php');
+        require_once('database_conn/db_connect.php');
           
-          $q = "INSERT INTO users (firstName, lastName, userEmail, userPass) VALUES ('$fn', '$ln', '$e', '$p' )";
+          $q = "INSERT INTO users (firstName, lastName, userEmail, userPass) VALUES ('$fn', '$ln', '$e', SHA1('$p') )";
           
           $r = mysqli_query($dbc, $q);
           

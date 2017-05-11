@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           
           require('database_conn/db_connect.php');
           
-          $q = "SELECT userId FROM users WHERE(userEmail='$e' AND userPass='$oldPass') "; 
+          $q = "SELECT userId FROM users WHERE(userEmail='$e' AND userPass=SHA1('$oldPass') )"; 
           $r = mysqli_query($dbc, $q);
           
           $num = mysqli_num_rows($r);
@@ -127,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           $row = mysqli_fetch_array($r, MYSQLI_NUM);
 
           //updates user password where the userId is = to the first query.
-          $q = "UPDATE users SET userPass= '$p' WHERE userId=$row[0]";
+          $q = "UPDATE users SET userPass= SHA1('$p') WHERE userId=$row[0]";
             
           $r = mysqli_query($dbc, $q);
             

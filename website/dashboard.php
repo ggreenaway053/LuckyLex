@@ -15,20 +15,20 @@ ob_start();
 <a id="home"></a>
     
       <!-- heading -->
-      <section class="jumbotron heading">
-        
-        <h1 class="text-center intro1 heading">Lucky Lex</h1>
+<div class="jumbotron" id="gifArea">
+      <section class="heading text-center">
+        <img src="img/logo.png" height=20% width=20%/>
           <hr class="small"/>
           <div class="text-center" id="userLogin">A small, fun project created by Gareth Greenaway.
             
             <br />
           <a href="https://twitter.com/ggreenawayGames" class="twitter-follow-button" data-show-count="false">Follow @ggreenawayGames</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            
-            
+           
         
           </div>
-            
+      
         </section>
+</div>
       
       <br />
         
@@ -94,11 +94,40 @@ ob_start();
             <br />
         
         </section>
+
+
+        <br />
+
+        <!-- Infographic -->
+      <section class="infoScores" id="score">
+        
+        <h1 class="scoresTitle text-right">Top Scoring</h1>
+        
+          <p class="lead text-center">Click the button to watch the race to the top!
+            <br />
+            
+            <button class="btn btn-lg btn-block, btn-info" id="highscoreBtn" onclick="highScores()">Start Race!</button></p>
+        
+        <div id="firstPlace" class="highestScoring">
+          <img src="img/highScorePlace.png" height=10% width=10%/><p class="lead">Lucky Lex</p>
+        </div>
+
+        <div id="secondPlace" class="highestScoring">
+          <img src="img/highScorePlace.png" height=10% width=10%/><p class="lead">Gareth</p>
+        </div>
+        
+        <div id="thirdPlace" class="highestScoring">
+          <img src="img/highScorePlace.png" height=10% width=10%/><p class="lead">Hannah</p>
+        </div>
+        
+        <br />
+      
+      </section>
       
       <br />
         
         
-        <!-- Download -->
+        <!-- Download AREA -->
         <a id="download"></a><section class="download text-center">
           
           <h1 class="downloadTitle text-right">Download</h1>
@@ -124,7 +153,18 @@ ob_start();
               <small>Please note, high scores cannot be submitted through this.</small></p>
 
             <!-- web version of game goes here. -->
-            <p>PLAY GAME HERE</p><br />
+            <p class="header"><span>Unity Web Player | </span>WebPlayer</p>
+                <div class="content">
+	               <div id="unityPlayer">
+		            <div class="missing">
+			           <a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+				          <img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+			           </a>
+		            </div>
+	               </div>
+              </div>
+
+        <p class="footer">« created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> »</p>
   
   </section>
 
@@ -144,7 +184,7 @@ ob_start();
   <p class="lead">Feel free to fill out this form and tell me what you think!</p>
   
   
-  <form method="POST" name="emailForm" action="emailForm.php">
+  <form method="POST" id="emailForm" name="emailForm" action="dashboard.php">
   
   <label for="name">Name:</label>
   <input type="text" name="name" id="name" class="form-control" placeholder="Lucky Lex" required/>
@@ -185,4 +225,55 @@ ob_start();
      
      include ('HTML_includes/footer.html');
 ob_end_flush();
+
+if (!isset($_POST['submitComment'])) {
+
+echo "Error! You need to fully submit the form!";
+
+}
+
+$n = $_POST['name'];
+
+$em = $_POST['emailAddress'];
+
+$message = $_POST['comment'];
+
+
+if (empty($n) || empty($em))
+{
+
+echo "Your name and email are required for the comments area.";
+exit();
+
+}
+
+//this will show on the email who it is from. used same email to stop messages going to spam folder
+$emailFrom = "ggreenaway053@gmail.com";
+
+
+//subject of email - so I know what it is about.
+$emailSubject = "Lucky Lex | New comment submitted";
+
+
+//the overall body of the email, this will show the user name and the message they have sent.
+$emailBody = "You have received a new comment from\n $n . Here is what they said:\n $message ".
+  
+//this is where the email will be sent to.  
+  $emailTo = "ggreenaway053@gmail.com";
+
+
+//headers to allow replies
+$headers = "From: $emailFrom \r\n";
+
+$headers .= "Reply-To: $em \r\n";
+
+
+//mails to email, with the subject and body including the headers
+mail($emailTo, $emailSubject, $emailBody, $headers);
+
+
+//once the email has been successfully submitted, the following will run
+echo " <script type='text/javascript'>
+        alert('Thanks for your comments, they are greatly appreicated! :] '); 
+        </script>";
      ?>

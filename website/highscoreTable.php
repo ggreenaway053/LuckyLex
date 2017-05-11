@@ -4,7 +4,7 @@ require ('database_conn/db_connect.php');
 
 
 // sql query for all highscores.
-$tableQuery = "SELECT highscore.score, users.firstName
+$tableQuery = "SELECT highscore.score, users.firstName, users.lastName
 FROM highscore
 INNER JOIN users ON highscore.userId = users.userId WHERE levelID = 1 ORDER BY score DESC";
 
@@ -29,31 +29,10 @@ if ($result){ //if there are results found, then this will run
   while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     
     
-    //if user raking is equal to either one, two or three then the following images will be shown.
-    if ($i=1){
       
       echo '<tbody class="text-center"><tr>
-          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .'<img src="img/first.png"/></td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
-      
-      
-    } elseif($i=2) {
-     
-      echo '<tbody class="text-center"><tr>
-          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .'<img src="img/second.png"/></td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
-      
-      
-    } elseif($i=3){
-      
-      echo '<tbody class="text-center"><tr>
-          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .'<img src="img/third.png"/></td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
-      
-        
-      }
-    
-    
-    echo '<tbody class="text-center"><tr>
-          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .'</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
-    
+          <td style="color: black; font-family:Dosis, Sans-Serif;">'. $i++ .' <img src="img/first.png"/ height=20%></td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['firstName'] .' '. $row['lastName'] . '</td><td style="color: black; font-family:Dosis, Sans-Serif;">' . $row['score'] . '</td></tr></tbody>';
+
     
     
   }

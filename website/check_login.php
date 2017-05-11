@@ -24,8 +24,8 @@ $password=$_POST['password'];
   $password = mysqli_real_escape_string($dbc, $password);
 
 
-    // sql query
-    $sql="SELECT * FROM users WHERE userEmail='$emailAddress' and userPass='$password'";
+    // sql query SHA1 helps to find encrypted pass
+    $sql="SELECT * FROM users WHERE userEmail='$emailAddress' and userPass=SHA1('$password')";
 
     $result=mysqli_query($dbc, $sql);
 

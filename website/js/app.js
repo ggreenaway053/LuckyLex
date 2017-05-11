@@ -77,10 +77,7 @@ $(document).ready(function () {
             $("#dwnloadBtn").removeClass("active");
 
                                         });
-  
-  
-  
-  
+
   
   
   // Checks window is at the top, if statement carries through if not
